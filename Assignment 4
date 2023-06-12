@@ -1,0 +1,4 @@
+select c.custID.
+ABS(TIMESTAMPDIFF(MONTH, c.Date, m.Date))
+AS months _diff FROM customers C INNER JOIN (select custiD, MIN(Date) AS Date
+FROM customers GROUP BY custiD) m ON c.custiD = m.custiD;
